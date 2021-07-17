@@ -7,13 +7,15 @@ This repo has connfiguration to set up chat Kafka dev environment with same vers
 
 ## Setup
  - Clone this repository
- - Run `start.sh` script. This will create 3 broker Kafka cluster as docker containers.
+ - Run `./start.sh` script. This will create 3 broker Kafka cluster as docker containers.
+ - The docker image is built based on Ubuntu 18.04 base image with kafka version 2.1.1 installed.
+ - Run `docker ps` to see the containers with name kafka-1,2,3 has come up properly.
  - Zookeeper is configured in each of the broker.
 
 ## Produce/consume messages
 
 If you want to use Kafka CLI tools to produce/consume messages:
- - Start the cluster with `start.sh`
+ - Start the cluster with `./start.sh`
  - Exec into one of the container - `docker exec -it kafka-1 bash`
  - To produce - `kafka-console-producer --bootstrap-server=localhost:19092 --topic <topic name>`
  - To consume - `kafka-console-consumer --bootstrap-server=localhost:19092 --topic <topic name>`

@@ -1,0 +1,16 @@
+  [Unit]
+  Description=Apache Kafka server (broker)
+  Requires=network.target remote-fs.target
+  After=network.target remote-fs.target
+  [Service]
+  Type=simple
+  User=cp-kafka
+  Group=confluent
+  LimitNOFILE=1000000
+  Environment="JMX_PORT=9999"
+  Environment="KAFKA_HEAP_OPTS=-Xmx512M -Xms512M"
+  ExecStart=/usr/bin/kafka-server-start /etc/kafka/server.properties
+  ExecStop=/usr/bin/kafka-server-stop
+  Restart=on-failure
+  [Install]
+  WantedBy=multi-user.target
