@@ -22,7 +22,7 @@ Zookeeper: `localhost:12181,localhost:22181,localhost:32181`
 If you want to use Kafka CLI tools to produce/consume messages:
  - Start the cluster with `./start.sh`
  - Exec into one of the container - `docker exec -it kafka-1 bash`
- - To create a topic - `kafka-topics --zookeeper=localhost:12181 --create --topic test --partitions 2 --replication-factor 2`
+ - To create a topic - `kafka-topics --zookeeper=localhost:12181 --create --topic test-1 --partitions 2 --replication-factor 2`
  - To list topics - `kafka-topics --zookeeper=localhost:12181 --list`
  - To produce - `kafka-console-producer --broker-list=localhost:19092,localhost:29092,localhost:39092 --topic test-1`
  - To consume - `kafka-console-consumer --bootstrap-server=localhost:19092,localhost:29092,localhost:39092 --topic test-1 --from-beginning`
