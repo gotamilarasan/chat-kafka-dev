@@ -12,6 +12,8 @@ RUN apt-get update
 
 RUN apt-get install -y confluent-kafka-2.11 confluent-platform-2.11 systemd net-tools vim 
 
+VOLUME ["/var/lib/zookeeper", "/var/lib/kafka"]
+
 ADD config/kafka/start_kafka.sh /start_kafka.sh
 
 RUN chmod +x /start_kafka.sh

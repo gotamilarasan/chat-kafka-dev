@@ -6,6 +6,11 @@ docker build -t chat-kafka .
 # initialize data directories
 mkdir -p data/kafka{1,2,3} data/zookeeper{1,2,3}
 
+# Set up zookeeper server IDs
+echo "1" > data/zookeeper1/myid
+echo "2" > data/zookeeper2/myid
+echo "3" > data/zookeeper3/myid
+
 COMMON_PARAMS="-d --net=host --tmpfs /tmp --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro"
 
 # Launch kafka broker 1
