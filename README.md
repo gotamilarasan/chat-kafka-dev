@@ -1,6 +1,6 @@
 # chat-kafka-dev
 
-This repo has configuration to set up chat Kafka dev environment with same version as production 2.1.1.
+This repo has configuration to set up chat Kafka dev environment with version 2.1.1.
 
 ## Prerequisite
  - Docker
